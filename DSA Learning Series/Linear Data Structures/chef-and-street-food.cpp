@@ -1,20 +1,29 @@
-#define ll long long int
-#define fast ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
- 
-int main()
-{   fast
-    ll t, n, a, b, c, res;
+
+int main() {
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    int t;
     cin>>t;
     while(t--){
+        int n;
         cin>>n;
-        res=-1;
-        for(ll i=0; i<n; i++){
-            cin>>a>>b>>c;
-            res=max(res, ((ll)(floor((double)b/(a+1)))*c));
+        int profit=0;
+        int max=0;
+        for(int i=0;i<n;i++){
+            int s,p,v;
+            cin>>s>>p>>v;
+            s+=1;
+            profit=(p/s)*v;
+            if(profit>max)
+                max=profit;
         }
-        cout<<res<<"\n";
+        cout<<max<<endl;
     }
 	return 0;
 }
+
